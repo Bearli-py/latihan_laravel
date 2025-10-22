@@ -44,7 +44,7 @@ Route::get('/produk/edit', function () {
     return view('edit-produk');
 });
 
-// Langkah 4: Route PUT untuk menerima data edit
+// routes/web.php 
 Route::put('/produk/update', function (Request $request) { 
     $namaBaru = $request->input('nama'); 
     $hargaBaru = $request->input('harga'); 
@@ -55,15 +55,3 @@ Route::put('/produk/update', function (Request $request) {
             <b>Harga:</b> Rp$hargaBaru <br> 
             <b>Kategori:</b> $kategoriBaru"; 
 });
-
-// Langkah 5: Route GET untuk menampilkan form edit harga
-Route::get('/produk/edit-harga', function () { 
-    return view('edit-harga'); 
-}); 
-
-// Langkah 6: Route PATCH untuk menerima data edit harga
-Route::patch('/produk/update-harga', function (Request $request) { 
-    $hargaBaru = $request->input('harga'); 
-    return "Harga produk berhasil diperbarui menjadi <b>Rp$hargaBaru</b> 
-(tanpa mengubah data lain)."; 
-}); 
